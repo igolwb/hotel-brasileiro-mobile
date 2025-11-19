@@ -35,7 +35,7 @@ export default function ReservaPage() {
     if (id) {
       const fetchQuarto = async () => {
         try {
-          const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://10.105.72.161:3000';
+          const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://172.16.1.234:3000';
           const token = await AsyncStorage.getItem('authToken');
           const response = await fetch(`${API_URL}/api/quartos/${id}`, {
             headers: {
@@ -121,7 +121,7 @@ export default function ReservaPage() {
     }
 
     try {
-      const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://10.105.72.161:3000';
+      const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://172.16.1.234:3000';
       const token = await AsyncStorage.getItem('authToken');
 
       // Step 1: Create reservation in the database

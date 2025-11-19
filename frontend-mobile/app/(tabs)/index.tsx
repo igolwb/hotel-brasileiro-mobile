@@ -43,10 +43,10 @@ export default function HomeScreen() {
         <View style={styles.buttonsContainer}>
           {/* Ir para Login */}
           <TouchableOpacity
-            style={styles.button}
+            style={styles.buttonLogin}
             onPress={() => router.push("/auth/Login")}
           >
-            <Text style={styles.buttonText}>Prosseguir para login</Text>
+            <Text style={styles.buttonLoginText}>Prosseguir para login</Text>
           </TouchableOpacity>
 
           {/* Ir para Cadastro */}
@@ -131,23 +131,23 @@ const styles = StyleSheet.create({
     marginBottom: 40,
     fontWeight: "500",
   },
-  button: {
+  buttonLogin: {
     backgroundColor: "#006494",
-    paddingVertical: 12,
+    paddingVertical: verticalScale(8),
     borderRadius: 12,
     width: "100%",
     alignItems: "center",
     marginBottom: 12,
   },
-  buttonText: {
+  buttonLoginText: {
     color: "#fff",
-    fontSize: scale(13),
+    fontSize: scale(14),
     fontWeight: "bold",
 
   },
   buttonRegister: {
     backgroundColor: "#00405C",
-    paddingVertical: 12,
+    paddingVertical: verticalScale(8),
     borderRadius: 12,
     width: "100%",
     alignItems: "center",
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   
   buttonTextRegister: {
     color: "#fff",
-    fontSize: scale(13),
+    fontSize: scale(14),
     fontWeight: "bold",
   },
 

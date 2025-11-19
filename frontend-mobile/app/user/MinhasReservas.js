@@ -10,7 +10,7 @@ const MinhasReservas = () => {
   const [error, setError] = useState(null);
   const router = useRouter();
 
-  const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://10.105.72.161:3000';
+  const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://172.16.1.234:3000';
 
   useEffect(() => {
     const fetchReservas = async () => {
