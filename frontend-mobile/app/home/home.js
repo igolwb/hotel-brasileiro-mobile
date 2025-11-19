@@ -49,7 +49,7 @@ export default function Home() {
   // Fetch rooms from the backend
   useEffect(() => {
     //troque o IP abaixo pelo IP da sua máquina, para descobrir o IP local veja no .env o processo
-    const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.0.106:3000";
+    const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://10.105.72.161:3000";
     fetch(`${API_URL}/api/quartos`)
       .then((res) => res.json())
       .then((data) => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image, Modal } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import BottomNav from "../../components/bottomNav";
 import { useLocalSearchParams, useRouter } from "expo-router";
@@ -11,6 +11,7 @@ const ProfileScreen = () => {
   const { UserId } = useLocalSearchParams(); // Captura parâmetros da rota
   const [userId, setUserId] = useState(null); // Estado para armazenar o ID do usuário
   const [userName, setUserName] = useState("Usuário"); // Estado para armazenar o nome do usuário
+  const [isModalVisible, setModalVisible] = useState(false); // Estado para visibilidade do modal
 
   // Efeito para buscar informações do usuário ao carregar a tela
   useEffect(() => {
@@ -50,6 +51,9 @@ const ProfileScreen = () => {
       console.error("Erro ao sair da conta:", error); // Log de erro
     }
   };
+
+  const openModal = () => setModalVisible(true);
+  const closeModal = () => setModalVisible(false);
 
   return (
     <View style={styles.container}>
@@ -97,11 +101,33 @@ const ProfileScreen = () => {
         </TouchableOpacity>
 
         {/* Botão para sair da conta */}
-        <TouchableOpacity style={styles.optionButton} onPress={signOut}>
+        <TouchableOpacity style={styles.optionButton} onPress={openModal}>
           <Icon name="logout" size={24} color="#fff" />
           <Text style={styles.optionText}>Sair da conta</Text>
         </TouchableOpacity>
       </View>
+
+      {/* Modal de confirmação */}
+      <Modal
+        visible={isModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={closeModal}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalText}>Tem certeza que deseja sair?</Text>
+            <View style={styles.modalButtons}>
+              <TouchableOpacity style={styles.modalButton} onPress={signOut}>
+                <Text style={styles.modalButtonText}>Sim</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.modalButton} onPress={closeModal}>
+                <Text style={styles.modalButtonText}>Não</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
 
       {/* Navegação inferior */}
       <BottomNav />
@@ -173,6 +199,41 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#fff",
     marginLeft: 15, // Espaço entre ícone e texto
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalContent: {
+    width: "80%",
+    padding: 20,
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  modalText: {
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  modalButtons: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  modalButton: {
+    flex: 1,
+    padding: 10,
+    marginHorizontal: 5,
+    backgroundColor: "#29374F",
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  modalButtonText: {
+    color: "#fff",
+    fontSize: 16,
   },
 });
 

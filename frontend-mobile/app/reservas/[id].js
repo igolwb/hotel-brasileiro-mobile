@@ -15,7 +15,7 @@ export default function QuartoDetalhe() {
     if (id) {
       const fetchQuarto = async () => {
         try {
-            const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.0.106:3000";
+            const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://10.105.72.161:3000";
             const token = await AsyncStorage.getItem("authToken");
             const response = await fetch(`${API_URL}/api/quartos/${id}`, {
                 headers: {

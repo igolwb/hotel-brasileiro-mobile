@@ -5,7 +5,7 @@ const handleLogin = async (email, senha, setErrorMsg, setLoading, router) => {
   setErrorMsg("");
   setLoading(true);
   try {
-    const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.0.106:3000";
+    const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://10.105.72.161:3000";
     const response = await fetch(`${API_URL}/api/login`, {
       method: "POST",
       headers: {

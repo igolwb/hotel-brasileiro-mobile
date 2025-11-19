@@ -33,8 +33,8 @@ const getLocalIP = () => {
 
 const app = express();
 const LOCAL_IP = getLocalIP();
-const WEB_FRONT_PORT = process.env.WEB_FRONT_PORT || `http://192.168.0.106:3001`;
-const WEB_BACK_PORT = process.env.WEB_BACK_PORT || `http://192.168.0.106:3000`;
+const WEB_FRONT_PORT = process.env.WEB_FRONT_PORT || `http://10.105.72.161:3001`;
+const WEB_BACK_PORT = process.env.WEB_BACK_PORT || `http://10.105.72.161:3000`;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 // Middlewares
