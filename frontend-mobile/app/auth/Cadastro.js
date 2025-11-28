@@ -127,7 +127,7 @@ export default function Cadastro() {
     }
     setLoading(true);
     try {
-        const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.0.106:3000";
+        const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000";
         const response = await fetch(`${API_URL}/api/clientes`, {
             method: "POST",
             headers: {

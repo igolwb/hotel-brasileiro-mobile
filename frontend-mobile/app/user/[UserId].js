@@ -21,7 +21,7 @@ const ProfileScreen = () => {
         const id = await AsyncStorage.getItem("UserId"); // Recupera o ID do usuário
         setUserId(id);
         if (token) {
-          const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.0.106:3000";
+          const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000";
           const response = await fetch(`${API_URL}/api/clientes/me`, {
             headers: {
               Authorization: `Bearer ${token}`, // Envia o token no cabeçalho

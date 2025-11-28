@@ -37,7 +37,7 @@ export default function Login() {
         try {
             // Debug log: show email and senha being sent
             console.log("Enviando para backend:", { email, senha });
-            const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.0.106:3000";
+            const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000";
             const response = await fetch(`${API_URL}/api/clientes/update-password`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

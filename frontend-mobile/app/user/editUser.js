@@ -12,7 +12,7 @@ export default function EditUser() {
 	const [phone, setPhone] = useState("");
     const [userId, setUserId] = useState(null);
 
-    const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://192.168.0.106:3000';
+    const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:3000';
     // Placeholder for user photo, replace with actual image path or URL if available
     const userPhoto = require("../../assets/images/user_pfp.png");
 

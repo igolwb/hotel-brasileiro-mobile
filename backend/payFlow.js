@@ -31,8 +31,8 @@ export async function createCheckout(req, res) {
       items,
       notification_urls: [process.env.PAGSEGURO_NOTIFICATION_URL],
       redirect_urls: {
-        success: "http://localhost:3001/reserva/concluida",
-        failure: "http://localhost:3001/reserva/concluida" // Assuming same URL for failure, adjust if needed
+        success: "http://localhost:8081/reserva/concluida",
+        failure: "http://localhost:8081/reserva/concluida" // Assuming same URL for failure, adjust if needed
       },
     };
 
