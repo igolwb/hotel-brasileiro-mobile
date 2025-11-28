@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, TextInput, Image, Alert } fro
 import { useRouter } from "expo-router";
 import BottomNav from "../../components/bottomNav";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { verticalScale, scale } from "react-native-size-matters";
 
 export default function EditUser() {
 	const router = useRouter();
@@ -11,7 +12,7 @@ export default function EditUser() {
 	const [phone, setPhone] = useState("");
     const [userId, setUserId] = useState(null);
 
-    const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://172.16.1.234:3000';
+    const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://192.168.0.106:3000';
     // Placeholder for user photo, replace with actual image path or URL if available
     const userPhoto = require("../../assets/images/user_pfp.png");
 
@@ -156,41 +157,40 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#0B2A3A',
-		paddingTop: 50,
+		paddingTop: verticalScale(40),
 		paddingHorizontal: 18,
 		position: 'relative',
 	},
-    backButton: {
-        position: "absolute",
-        top: 20,
-        left: 20,
-        zIndex: 1,
-        padding: 4,
-        backgroundColor: "rgba(0,0,0,0.3)",
-        borderRadius: 20,
-    },
-    backIcon: {
-        width: 32,
-        height: 32,
-    },
+  backButton: {
+    padding: 8,
+    borderRadius: 20,
+  },
+  backIcon: {
+    color: "#fff",
+    width: scale(33),
+    height: verticalScale(33),
+    fontSize: scale(28),
+    fontWeight: "bold",
+    marginLeft: 2,
+    marginTop: scale(5),
+  },
     profileContainer: {
         alignItems: 'center',
         marginTop: 40,
         marginBottom: 10,
     },
     profilePhoto: {
-        width: 120,
-        height: 120,
-        borderRadius: 60,
-        backgroundColor: '#E8F1F2',
-        marginBottom: 10,
+    width: 140,
+    height: 140,
+    marginTop: verticalScale(-20),
+    borderRadius: 70, // Torna a imagem circular
+    backgroundColor: "#ccc",
+    marginBottom: 16,
     },
     profileName: {
-        color: '#fff',
-        fontSize: 22,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: 10,
+    fontSize: scale(24),
+    color: "#fff",
+    fontWeight: "bold",
     },
     formContainer: {
         marginTop: 10,
@@ -198,7 +198,8 @@ const styles = StyleSheet.create({
     },
     label: {
         color: '#fff',
-        fontSize: 15,
+        fontWeight: 'bold',
+        fontSize: scale(14),
         marginBottom: 2,
         marginLeft: 6,
     },
@@ -207,20 +208,20 @@ const styles = StyleSheet.create({
         color: '#fff',
         borderRadius: 15,
         paddingHorizontal: 16,
-        paddingVertical: 10,
-        fontSize: 15,
+        paddingVertical: verticalScale(6),
+        fontSize: scale(13),
         marginBottom: 15,
     },
     blueButton: {
         backgroundColor: '#006494',
         borderRadius: 20,
-        paddingVertical: 12,
+        paddingVertical: verticalScale(9),
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: verticalScale(10),
     },
     blueButtonText: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 16,
+        fontSize: scale(14),
     },
 });

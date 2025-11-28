@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     width: scale(298),
-    height: verticalScale(45),
+    height: verticalScale(50),
     backgroundColor: "#004F70",
     position: "absolute",
     left: 33,

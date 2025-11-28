@@ -2,7 +2,7 @@ import { generateAPIUrl } from '@/utils/utils';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 import { fetch as expoFetch } from 'expo/fetch';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   View,
   TextInput,
@@ -29,6 +29,11 @@ export default function App() {
     }),
     onError: error => console.error(error, 'ERROR'),
   });
+
+  useEffect(() => {
+    // Scroll to the bottom whenever messages update
+    scrollViewRef.current?.scrollToEnd({ animated: true });
+  }, [messages]);
 
   if (error) return <Text>{error.message}</Text>;
 

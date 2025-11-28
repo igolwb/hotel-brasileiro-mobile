@@ -147,7 +147,9 @@ const styles = StyleSheet.create({
   },
   backIcon: {
     color: "#fff",
-    fontSize: 28,
+    width: scale(33),
+    height: verticalScale(33),
+    fontSize: scale(28),
     fontWeight: "bold",
     marginLeft: 2,
     marginTop: scale(-20),
@@ -173,7 +175,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   username: {
-    fontSize: scale(25),
+    fontSize: scale(24),
     color: "#fff",
     fontWeight: "bold",
   },
@@ -184,8 +186,8 @@ const styles = StyleSheet.create({
     alignItems: "center", // Centraliza os botões
   },
   optionButton: {
-    width: "100%",
-    height: 70,
+    width: "90%",
+    height: verticalScale(50),
     flexDirection: "row", // Ícone e texto lado a lado
     alignItems: "center",
     paddingVertical: 12,
@@ -196,7 +198,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   optionText: {
-    fontSize: 18,
+    fontSize: scale(14),
     color: "#fff",
     marginLeft: 15, // Espaço entre ícone e texto
   },

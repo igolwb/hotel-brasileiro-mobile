@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import RootLayout from "./app/_layout";
 
 const linking = {
-  prefixes: ["meuappmobile://"], // Deep link scheme
+  prefixes: ["hotelbrasileiro://"], // Deep link scheme
   config: {
     screens: {
       "(tabs)/index": "tabs/index",

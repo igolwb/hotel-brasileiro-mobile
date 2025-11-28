@@ -43,18 +43,18 @@ PGUSER='hoteldb_owner'
 PGPASSWORD='npg_7SjQXYmWk2Ad' 
 JWT_SECRET='4eceed3691fef88bfb7b6ad1'
 
-#ips: http://172.16.1.234:3000
+#ips: http://192.168.0.106:3000
 
-WEB_FRONT_PORT='http://172.16.1.234:3001' 
-WEB_BACK_PORT='http://172.16.1.234:3000'
+WEB_FRONT_PORT='http://192.168.0.106:3001' 
+WEB_BACK_PORT='http://192.168.0.106:3000'
 
-EXPO_PUBLIC_API_URL='http://172.16.1.234:3000'
+EXPO_PUBLIC_API_URL='http://192.168.0.106:3000'
 
 EMAIL_USER='igolwb@gmail.com' 
 EMAIL_PASS='pzeejieogmqvbfea'
 
 PAGSEGURO_SANDBOX_TOKEN=
-PAGSEGURO_NOTIFICATION_URL=http://172.16.1.234:3000/api/payments/notifications
+PAGSEGURO_NOTIFICATION_URL=http://192.168.0.106:3000/api/payments/notifications
 
 GROQ_API_KEY=
 

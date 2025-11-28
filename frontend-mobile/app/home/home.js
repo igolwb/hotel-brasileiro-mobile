@@ -49,7 +49,7 @@ export default function Home() {
   // Fetch rooms from the backend
   useEffect(() => {
     //troque o IP abaixo pelo IP da sua máquina, para descobrir o IP local veja no .env o processo
-    const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://172.16.1.234:3000";
+    const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://192.168.0.106:3000";
     fetch(`${API_URL}/api/quartos`)
       .then((res) => res.json())
       .then((data) => {
@@ -150,9 +150,9 @@ export default function Home() {
 				loop={true}
 				pagingEnabled={true}
 				snapEnabled={true}
-				width={width * 0.8}
+				width={width * 0.9}
 				style={{
-					width: width * 0.8,
+					width: width * 0.9,
           alignSelf: "center",
 				}}
 				mode="parallax"
@@ -176,9 +176,9 @@ export default function Home() {
 				loop={true}
 				pagingEnabled={true}
 				snapEnabled={true}
-				width={width * 0.8}
+				width={width * 0.9}
 				style={{
-					width: width * 0.8,
+					width: width * 0.9,
           alignSelf: "center",
 				}}
 				mode="parallax"
@@ -205,6 +205,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: verticalScale(175),
     justifyContent: "flex-start",
+    marginBottom: 20,
   },
   overlayTextContainer: {
     padding: 20,
@@ -221,7 +222,7 @@ const styles = StyleSheet.create({
   },
   sectionencontros: {
     paddingHorizontal: 20,
-    height: 600,
+    height: 575,
   },
   sectionTitle: {
     fontSize: 24,

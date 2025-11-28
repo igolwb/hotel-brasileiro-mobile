@@ -1,19 +1,20 @@
 {
   "expo": {
-    "name": "meuAppMobile",
-    "slug": "meuAppMobile",
+    "name": "hotelbrasileiro",
+    "slug": "hotelbrasileiro",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "meuappmobile",
+    "scheme": "hotelbrasileiro",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yourcompany.meuappmobile",
+      "bundleIdentifier": "com.yourcompany.hotelbrasileiro",
       "infoPlist": {
         "NSCameraUsageDescription": "This app requires access to the camera to upload photos.",
-        "NSLocationWhenInUseUsageDescription": "This app requires access to your location to provide better services."
+        "NSLocationWhenInUseUsageDescription": "This app requires access to your location to provide better services.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -21,7 +22,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.yourcompany.meuappmobile",
+      "package": "com.yourcompany.hotelbrasileiro",
       "permissions": [
         "CAMERA",
         "ACCESS_FINE_LOCATION"
@@ -37,7 +38,7 @@
               "pathPrefix": "/redirect"
             },
             {
-              "scheme": "meuappmobile"
+              "scheme": "hotelbrasileiro"
             }
           ],
           "category": [
@@ -66,6 +67,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "064fffd4-2b61-4dee-a25f-835921be33a3"
+      }
+    },
+    "owner": "ingoat"
   }
 }
